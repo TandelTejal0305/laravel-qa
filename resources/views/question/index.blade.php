@@ -6,14 +6,16 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                       <div class="d-flex align-item-center">
-                           <h2>All Question</h2>
-
-                           <div class="create">
+                        <div class="container">
+                            <div class="col-md-12">
+                            <div class="col-md-10">
+                                    <h2>All Question</h2>
+                                </div>
+                           <div class="col-md-1">
                                <a href="{{route('questions.create')}}" class="btn btn-info">Ask Question</a>
                             </div>
                        </div>
-
+                        </div>
                     </div>
 
                     <div class="panel-body">
@@ -37,13 +39,22 @@
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h3 class="mt-0"><a href="{{$question->url}}">{{$question->title}}</a> </h3>
+
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                        <h3 class="mt-0"><a href="{{$question->url}}">{{$question->title}}</a> </h3>
+                                         </div>
+                                    <div class="col-md-1">
+                                        <a href="{{route('questions.edit',$question->id)}}" class="btn  btn-outline-info">Edit</a>
+                                    </div>
+                                        </div>
                                     <p class="lead">
                                         Asked By
                                         <a href="{{$question->user->url}}">{{$question->user->name}}</a>
                                         <small class="text-muted">{{$question->created_date}}</small>
                                     </p>
                                     {{str_limit($question->body,250)}}
+
                                 </div>
                                 <hr>
                             </div>

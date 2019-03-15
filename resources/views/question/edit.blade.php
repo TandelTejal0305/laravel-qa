@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="d-flex align-item-center">
-                            <h2>Ask Question</h2>
+                            <h2>Edit Question</h2>
 
                             <div class="create">
                                 <a href="{{route('questions.index')}}" class="btn btn-info">Back to Questions</a>
@@ -15,8 +15,9 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <form action="{{route('questions.store')}}" method="post">
-                            @include("question._form",['buttonText'=>"Ask Question"])
+                        <form action="{{route('questions.update',$question->id)}}" method="post">
+                            {{method_field('PUT')}}
+                            @include("question._form",['buttonText'=>"Update Question"])
 
                         </form>
                     </div>
