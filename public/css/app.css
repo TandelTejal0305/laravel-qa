@@ -8374,4 +8374,6 @@ button.close {
 .create {
   float: right;
 }
-
+form.form-delete{
+  display: inline;
+}

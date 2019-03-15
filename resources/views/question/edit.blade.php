@@ -9,7 +9,7 @@
                         <div class="d-flex align-item-center">
                             <h2>Edit Question</h2>
 
-                            <div class="create">
+                            <div class="ml-auto">
                                 <a href="{{route('questions.index')}}" class="btn btn-info">Back to Questions</a>
                             </div>
                         </div>

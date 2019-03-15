@@ -76,7 +76,7 @@ class QuestionsController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(AskQuestionRequest $request, Question $question)
     {
         $question->update($request->only('title','body'));
 
@@ -91,6 +91,8 @@ class QuestionsController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        $question->delete();
+
+        return redirect('/questions')->with('success',"your question has been Deleted");
     }
 }
