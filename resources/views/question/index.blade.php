@@ -17,6 +17,8 @@
                     </div>
 
                     <div class="panel-body">
+
+                        @include('layouts._messsages')
                         @foreach($questions as $question)
                             <div class="media">
                                 <div class="d-flex flex-column counters">

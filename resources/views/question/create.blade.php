@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div>
+                        <div class="d-flex align-item-center">
                             <h2>Ask Question</h2>
 
                             <div class="create">
@@ -17,31 +17,31 @@
                     <div class="panel-body">
                         <form action="{{route('questions.store')}}" method="post">
                             @csrf
-                            <table><tr>
                             <div class="form-group">
-                               <td> <label for="question-title">Question Title</label></td></tr>
-                                <tr><td><input type="text" name="title" id="question-title" class="form-group" {{$errors->has('title') ? 'is invalid' : ''}}></td>
+                                <label for="question-title">Question Title</label>
+                                <input type="text" name="title" value="{{old('title')}}" id="question-title" class="form-control  {{$errors->has('title') ? 'is invalid' : ''}}">
                                     @if($errors->has('title'))
                                         <div class="invalid-feedback">
-                                            <strong>{{$errors->first('title')}}</strong>
+                                            <strong>{{ $errors->first('title') }}</strong>
                                         </div>
                                     @endif
-                            </div></tr>
-                            <tr>
+                            </div>
+
                             <div class="form-group">
-                                <td><label for="question-body">Explain you Question</label></td></tr>
-                                <tr><td> <textarea  name="body" id="question-body" rows="10" class="form-group" {{$errors->has('body') ? 'is invalid' : ''}}></textarea></td>
+                                <label for="question-body">Explain you Question</label>
+                                 <textarea  name="body" id="question-body" rows="10" class="form-control {{$errors->has('body') ? 'is invalid' : ''}} ">{{old('body')}}</textarea>
 
                                     @if($errors->has('body'))
                                         <div class="invalid-feedback">
-                                            <strong>{{$errors->first('body')}}</strong>
+                                            <strong>{{ $errors->first('body') }}</strong>
                                         </div>
                                     @endif
-                            </div></tr>
-                            <div class="form-group"><tr>
-                               <td><button type="submit" class="btn btn-outline-primary btn-lg">Ask This Question</button></td>
-                            </div></tr>
-                                </table>
+
+                            </div>
+                            <div class="form-group">
+                               <button type="submit" class="btn btn-success">Ask This Question</button>
+                            </div>
+
                         </form>
                     </div>
                 </div>
