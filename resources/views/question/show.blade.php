@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="d-flex align-items-center">
-                            <h2>Edit Question</h2>
+                            <h1>{{$question->title}}</h1>
 
                             <div class="ml-auto">
                                 <a href="{{route('questions.index')}}" class="btn btn-info">Back to All Questions</a>
@@ -15,11 +15,7 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <form action="{{route('questions.update',$question->id)}}" method="post">
-                            {{method_field('PUT')}}
-                            @include("question._form",['buttonText'=>"Update Question"])
-
-                        </form>
+                        {!! $question->body_html !!}
                     </div>
                 </div>
             </div>

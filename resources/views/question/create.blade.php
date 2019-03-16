@@ -6,11 +6,11 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="d-flex align-item-center">
+                        <div class="d-flex align-items-center">
                             <h2>Ask Question</h2>
 
                             <div class="ml-auto">
-                                <a href="{{route('questions.index')}}" class="btn btn-info">Back to Questions</a>
+                                <a href="{{route('questions.index')}}" class="btn btn-info">Back to All Questions</a>
                             </div>
                         </div>
                     </div>
