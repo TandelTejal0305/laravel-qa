@@ -45,14 +45,18 @@
                                         <h3 class="mt-0"><a href="{{$question->url}}">{{$question->title}}</a> </h3>
 
                                         <div class="ml-auto">
-                                            <a href="{{route('questions.edit',$question->id)}}" class="btn  btn-outline-info">Edit</a>
+                                            @if(Auth::user()->can('update-question',$question))
+                                                 <a href="{{route('questions.edit',$question->id)}}" class="btn  btn-outline-info">Edit</a>
+                                            @endif
                                          </div>
-                                        <form class="form-delete" method="post" action="{{route('questions.destroy',$question->id)}}">
+                                        @if(Auth::user()->can('delete-question',$question))
+                                            <form class="form-delete" method="post" action="{{route('questions.destroy',$question->id)}}">
 
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are You Sure?')">DELETE</button>
                                         </form>
+                                        @endif
                                         </div>
                                     <p class="lead">
                                         Asked By
